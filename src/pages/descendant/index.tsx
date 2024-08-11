@@ -19,61 +19,63 @@ interface DescendantProps {
 
 // const Descendant = ({ dehydratedState: descendantList }: DescendantProps) => {
 const Descendant = () => {
-    const [activeData, setActiveData] = useState<DescendantType>(descendantList[0]);
-    const keywords = descendantList.map((descendant) => descendant.descendant_name).join(",");
+    // const [activeData, setActiveData] = useState<DescendantType>(descendantList[0]);
+    // const keywords = descendantList.map((descendant) => descendant.descendant_name).join(",");
 
     const maxWidth = "1120px";
 
-    return (
-        <StyledDescendant gap={3} align="flex-start">
-            <Head>
-                <title>퍼덩이 - 계승자</title>
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content={`${process.env.NEXT_PUBLIC_DOMAIN}/descendant`} />
-                <meta property="og:title" content="퍼덩이" />
-                <meta property="og:image" content="/images/logo.png" />
-                <meta property="og:image:width" content="800" />
-                <meta property="og:image:height" content="420" />
-                <meta property="og:description" content="퍼스트 디센던트를 즐기기 위한 다양한 정보와 공략을 알아보세요" />
-                <meta property="og:site_name" content="퍼덩이" />
-                <meta name="description" content="퍼스트 디센던트를 즐기기 위한 다양한 정보와 공략을 알아보세요" />
-                <meta name="twitter:title" content="퍼덩이" />
-                <meta name="twitter:description" content="퍼스트 디센던트를 즐기기 위한 다양한 정보와 공략을 알아보세요" />
-                <meta name="keywords" content={keywords} />
-                <meta name="twitter:title" content="퍼덩이" />
-                <meta name="twitter:description" content="퍼스트 디센던트를 즐기기 위한 다양한 정보와 공략을 알아보세요" />
-                {/* <meta name="google-site-verification" content="구글서치콘솔키" /> */}
-                {/* <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                            getMarkupScheme(data?.title, data?.subTitle, data?.url, data?.thumbnailUrl, data?.writer?.name, data?.publishedAt, data?.createdAt)
-                        ),
-                    }}
-                /> */}
-                <link rel="canonical" href={`${process.env.NEXT_PUBLIC_DOMAIN}/descendant`} />
-            </Head>
+    return <></>;
 
-            <StyledAside>
-                {/* 계승자 */}
-                {descendantList.map((descendant: DescendantType) => {
-                    return <Card key={descendant.descendant_id} data={descendant} onClick={() => setActiveData(descendant)} />;
-                })}
-            </StyledAside>
+    // return (
+    //     <StyledDescendant gap={3} align="flex-start">
+    //         <Head>
+    //             <title>퍼덩이 - 계승자</title>
+    //             <meta property="og:type" content="website" />
+    //             <meta property="og:url" content={`${process.env.NEXT_PUBLIC_DOMAIN}/descendant`} />
+    //             <meta property="og:title" content="퍼덩이" />
+    //             <meta property="og:image" content="/images/logo.png" />
+    //             <meta property="og:image:width" content="800" />
+    //             <meta property="og:image:height" content="420" />
+    //             <meta property="og:description" content="퍼스트 디센던트를 즐기기 위한 다양한 정보와 공략을 알아보세요" />
+    //             <meta property="og:site_name" content="퍼덩이" />
+    //             <meta name="description" content="퍼스트 디센던트를 즐기기 위한 다양한 정보와 공략을 알아보세요" />
+    //             <meta name="twitter:title" content="퍼덩이" />
+    //             <meta name="twitter:description" content="퍼스트 디센던트를 즐기기 위한 다양한 정보와 공략을 알아보세요" />
+    //             <meta name="keywords" content={keywords} />
+    //             <meta name="twitter:title" content="퍼덩이" />
+    //             <meta name="twitter:description" content="퍼스트 디센던트를 즐기기 위한 다양한 정보와 공략을 알아보세요" />
+    //             {/* <meta name="google-site-verification" content="구글서치콘솔키" /> */}
+    //             {/* <script
+    //                 type="application/ld+json"
+    //                 dangerouslySetInnerHTML={{
+    //                     __html: JSON.stringify(
+    //                         getMarkupScheme(data?.title, data?.subTitle, data?.url, data?.thumbnailUrl, data?.writer?.name, data?.publishedAt, data?.createdAt)
+    //                     ),
+    //                 }}
+    //             /> */}
+    //             <link rel="canonical" href={`${process.env.NEXT_PUBLIC_DOMAIN}/descendant`} />
+    //         </Head>
 
-            <StyledMain>
-                {/* 파밍 */}
-                <Farming maxWidth={maxWidth} data={DESCENDANT_FARMING[activeData.descendant_name]} />
+    //         <StyledAside>
+    //             {/* 계승자 */}
+    //             {descendantList.map((descendant: DescendantType) => {
+    //                 return <Card key={descendant.descendant_id} data={descendant} onClick={() => setActiveData(descendant)} />;
+    //             })}
+    //         </StyledAside>
 
-                {/* 스킬 */}
-                <Skill maxWidth={maxWidth} data={activeData} />
+    //         <StyledMain>
+    //             {/* 파밍 */}
+    //             <Farming maxWidth={maxWidth} data={DESCENDANT_FARMING[activeData.descendant_name]} />
 
-                {/* <Dropdown title={"레벨별 스텟"} maxWidth={maxWidth}>
-                    <>TEST</>
-                </Dropdown> */}
-            </StyledMain>
-        </StyledDescendant>
-    );
+    //             {/* 스킬 */}
+    //             <Skill maxWidth={maxWidth} data={activeData} />
+
+    //             {/* <Dropdown title={"레벨별 스텟"} maxWidth={maxWidth}>
+    //                 <>TEST</>
+    //             </Dropdown> */}
+    //         </StyledMain>
+    //     </StyledDescendant>
+    // );
 };
 
 const StyledDescendant = styled(Page)``;
