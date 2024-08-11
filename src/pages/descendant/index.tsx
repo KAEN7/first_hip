@@ -91,33 +91,34 @@ const StyledMain = styled.main`
     gap: 24px;
 `;
 
-export const getStaticProps = async () => {
-    const queryClient = new QueryClient();
+// export const getStaticProps = async () => {
+//     const queryClient = new QueryClient();
 
-    await queryClient.prefetchQuery(["descendant"], () =>
-        axios
-            .get(`${process.env.NEXT_PUBLIC_NEXON_API_HOST}/api/openApi/descendant`)
-            .then((res) => res.data.data)
-            .catch((err) => {
-                console.error("[GET ARTICLE ERROR]", err);
-                return [];
-                // if (err.response.status === 404) {
-                //     console.error("[GET ARTICLE ERROR]", err);
-                // }
-                // return {
-                //     notFound: true,
-                // };
-            })
-    );
+//     await queryClient.prefetchQuery(["descendant"], () =>
+//         axios
+//             // .get("http://localhost:3000/api/openApi/descendant")
+//             .get("/api/openApi/descendant")
+//             .then((res) => res.data.data)
+//             .catch((err) => {
+//                 console.error("[GET ARTICLE ERROR]", err);
+//                 return [];
+//                 // if (err.response.status === 404) {
+//                 //     console.error("[GET ARTICLE ERROR]", err);
+//                 // }
+//                 // return {
+//                 //     notFound: true,
+//                 // };
+//             })
+//     );
 
-    const dehydratedState = await dehydrate(queryClient).queries[0]?.state?.data;
+//     const dehydratedState = await dehydrate(queryClient).queries[0]?.state?.data;
 
-    return {
-        props: {
-            dehydratedState: dehydratedState ?? [],
-        },
-        revalidate: 10, // ? seconds 3600 = 1 Hour, 86400 = 1 Day
-    };
-};
+//     return {
+//         props: {
+//             dehydratedState: dehydratedState ?? [],
+//         },
+//         revalidate: 10, // ? seconds 3600 = 1 Hour, 86400 = 1 Day
+//     };
+// };
 
 export default Descendant;
