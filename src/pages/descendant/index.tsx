@@ -17,7 +17,8 @@ interface DescendantProps {
     dehydratedState: DescendantType[];
 }
 
-const Descendant = ({ dehydratedState: descendantList }: DescendantProps) => {
+// const Descendant = ({ dehydratedState: descendantList }: DescendantProps) => {
+const Descendant = () => {
     const [activeData, setActiveData] = useState<DescendantType>(descendantList[0]);
     const keywords = descendantList.map((descendant) => descendant.descendant_name).join(",");
 
