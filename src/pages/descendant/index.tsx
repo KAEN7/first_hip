@@ -96,7 +96,7 @@ export const getStaticProps = async () => {
 
     await queryClient.prefetchQuery(["descendant"], () =>
         axios
-            .get("http://localhost:3000/api/openApi/descendant")
+            .get(`${process.env.NEXT_PUBLIC_NEXON_API_HOST}/api/openApi/descendant`)
             .then((res) => res.data.data)
             .catch((err) => {
                 console.error("[GET ARTICLE ERROR]", err);
