@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /exclude
+
+# Host
+Host: https://www.firsthip.info
+
+# Sitemaps
+Sitemap: https://www.firsthip.info/sitemap.xml
