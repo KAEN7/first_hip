@@ -6,7 +6,21 @@ import { useRouter } from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-	const keywords = [""].join(",");
+	const keywords = [
+		"퍼센트 디센던트 공략",
+		"퍼디",
+		"퍼디 공략",
+		"퍼센트 디센던트 파밍",
+		"퍼센트 디센던트 성유물",
+		"퍼디 엉덩이",
+		"퍼디 버니",
+		"퍼디 얼티밋 버니",
+		"퍼디 밸비",
+		"퍼디 자원",
+		"퍼디 소모품",
+		"퍼디 암호화 보관함",
+		"넥슨게임즈",
+	].join(",");
 	const router = useRouter();
 
 	// TODO util로 분리
