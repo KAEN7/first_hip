@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 	const keywords = [
+		"퍼덩이",
 		"퍼센트 디센던트 공략",
 		"퍼디",
 		"퍼디 공략",
